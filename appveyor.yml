@@ -64,12 +64,7 @@
       }
       (New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe', "$nugetDir\NuGet.exe");
       
-      $moduleManifest = "$($env:APPVEYOR_BUILD_FOLDER)\$moduleName.psd1";
-      If(Get-Module $moduleName) {
-        Remove-Module $moduleName;  
-      }
-      
-      Publish-Module -Name $moduleName -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
+      Publish-Module -Name $moduleName -Path $($env:APPVEYOR_BUILD_FOLDER) -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
 
   notifications:
   - provider: Slack
