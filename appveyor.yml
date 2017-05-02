@@ -47,7 +47,7 @@
       $currentVersion = ($env:APPVEYOR_BUILD_NUMBER).PadLeft(3,"0");
       $targetVersion = "1.0.$($version)$($currentVersion)";
 
-      $moduleName = "PSDT.App";      
+      $moduleName = "PSDT.App";
       
       $moduleManifest = "$($env:APPVEYOR_BUILD_FOLDER)\$moduleName.psd1";
           
@@ -64,7 +64,7 @@
       }
       (New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe', "$nugetDir\NuGet.exe");
       
-      Publish-Module -Name $moduleName -Path "$($env:APPVEYOR_BUILD_FOLDER)" -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
+      Publish-Module -Name $moduleName -Path "$moduleManifest" -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
 
   notifications:
   - provider: Slack
