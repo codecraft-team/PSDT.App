@@ -12,8 +12,6 @@
       secure: tYbZpB5IIB1kZg3vnb1hYZyJUI27locxtQHA6I7wrC8=
     PSGalleryApiKey:
       secure: 3uEUNJ8M0/Rdg1D2KT+XLjpWNr7QbTMO/8SjSXuAwbbeGW1UIfwLthZ0nzFSEpRl
-    my_variable:
-      secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvw3a6EY1pjac3uC1QAV6d84t55OLxA99lx5qPX+GZvTPo=
   init:
   - ps: >-
       Install-PackageProvider -Name NuGet -MinimumVersion '2.8.5.201' -Force;
@@ -71,7 +69,7 @@
   notifications:
   - provider: Slack
     incoming_webhook:
-      secure: $($env:PSModulePath)
+      secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvw3a6EY1pjac3uC1QAV6d84t55OLxA99lx5qPX+GZvTPo=
     template: >-
       <{{buildUrl}}|PSDevTools Release Build {{buildVersion}} {{status}}>
 
