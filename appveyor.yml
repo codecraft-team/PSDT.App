@@ -64,7 +64,7 @@
       }
       (New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe', "$nugetDir\NuGet.exe");
       
-      Publish-Module -Name $moduleName -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false -RequiredVersion $targetVersion;
+      Publish-Module -Name $moduleName -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
 
   notifications:
   - provider: Slack
