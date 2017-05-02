@@ -68,7 +68,8 @@
 
   notifications:
   - provider: Slack
-    incoming_webhook: https://hooks.slack.com/services/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
+    incoming_webhook:
+      secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvw3a6EY1pjac3uC1QAV6d84t55OLxA99lx5qPX
     template: >-
       <{{buildUrl}}|PSDevTools Release Build {{buildVersion}} {{status}}>
 
