@@ -64,12 +64,11 @@
       }
       (New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe', "$nugetDir\NuGet.exe");
       
-      Publish-Module -Name $moduleName -Path $($env:APPVEYOR_BUILD_FOLDER) -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
+      Publish-Module -Name $moduleName -Path "$($env:APPVEYOR_BUILD_FOLDER)" -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
 
   notifications:
   - provider: Slack
-    incoming_webhook:
-      secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvwhLtAckooSOL2VkJvQB5e0CsmCIk06WoqwCsO6o7aGGs
+    incoming_webhook: https://hooks.slack.com/services/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
     template: >-
       <{{buildUrl}}|PSDevTools Release Build {{buildVersion}} {{status}}>
 
