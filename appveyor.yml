@@ -6,7 +6,7 @@
   version: 1.0.{build}
   pull_requests:
     do_not_increment_build_number: false
-  clone_folder: c:\Projects\PSDT.App\Release
+  clone_folder: c:\Projects\PSDT.App
   environment:
     AppVeyorAuthorizationToken: 
       secure: tYbZpB5IIB1kZg3vnb1hYZyJUI27locxtQHA6I7wrC8=
@@ -63,7 +63,7 @@
         $nugetDir = 'C:\Tools\NuGet';
       }
       (New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe', "$nugetDir\NuGet.exe");
-      
+
       Publish-Module -Path "$($env:APPVEYOR_BUILD_FOLDER)" -NuGetApiKey $env:PSGalleryApiKey -Confirm:$false;
 
   notifications:
@@ -71,7 +71,7 @@
     incoming_webhook:
       secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvw3a6EY1pjac3uC1QAV6d84t55OLxA99lx5qPX+GZvTPo=
     template: >-
-      <{{buildUrl}}|PSDevTools Release Build {{buildVersion}} {{status}}>
+      <{{buildUrl}}|PSDT.App Release Build {{buildVersion}} {{status}}>
 
       Commit <{{commitUrl}}|{{commitId}}> by {{commitAuthor}} on {{commitDate}}
     on_build_success: true
