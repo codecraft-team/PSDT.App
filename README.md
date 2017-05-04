@@ -1,4 +1,4 @@
-# PowerShell Developer Tools
+# PSDT.App
 
 [![Build status](https://ci.appveyor.com/api/projects/status/28644pdknhyoxhe9/branch/master?svg=true&passingText=Build%20Passing&failingText=Build%20Failing&pendingText=Build%20Pending)](https://ci.appveyor.com/project/TauriCode/PSDT-App)
 
