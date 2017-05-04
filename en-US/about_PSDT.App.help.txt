@@ -5,26 +5,32 @@ SHORT DESCRIPTION
         PSDT.App is a collection of PowerShell cmdlets, which improves developer productivity.
 
 LONG DESCRIPTION
-        The PowerShell Developer Tools for Team Foundation Server simplifies working with
-        Team Foundation Server version control.
-        
-        PSDT.App is shipped with a built-in (nested) module, which is intended to encapsulate 
-        general PSDT application logic.
+        Thinking in applications, when using PowerShell helps us to separate work into multiple PowerShell windows.
+        The PSDT.App module is responsible to display the context of the currently used PSDT module to the user.
+        The module can be used standalone, however it is intended to deliver lower level functions to other PSDT modules.
          
         The following functionality is supported:
         
-        * Getting of latest sources
+        - The PowerShell window title displays PSDT | PowerShell Developer Tools as soon as you import the module,
+        - Searching for 
+                - directories,
+                - files,
+                - any child item,
+          by using multiple path segment filters.
+        - Tab completion, for the above mentioned search cmdlets.
+
+        For more information check the cmdlets help.
         
 CONTRIBUTE
 
         PSDT.App is open source on GitHub:
         
-        https://github.com/tauri-code/PSDevTools
+        https://github.com/tauri-code/PSDT.App
         
         As you use the module and find what you believe to be are bugs,
         please submit them to:
         
-        https://github.com/tauri-code/PSDevTools/issues
+        https://github.com/tauri-code/PSDT.App/issues
         
         Better yet, fix the bug and submit a pull request.
 
