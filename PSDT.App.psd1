@@ -6,6 +6,6 @@
     CompanyName = 'Tauri-Code'
     Copyright = '(c) 2017 Tauri-Code. All rights reserved.'
     Description = 'A collection of PowerShell developer tool related basic cmdlets.'
-    FunctionsToExport = @("Get-Directory","Get-File","Find-ChildItem")
+    FunctionsToExport = @("Get-Directory","Get-File","Find-ChildItem","Clear-ChildItemCache")
     AliasesToExport = @("f","d","fci")
 }

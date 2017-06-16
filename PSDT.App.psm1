@@ -28,6 +28,34 @@ Function global:TabExpansion($line, $lastWord) {
 $global:PSDTChildItemCache = @{};
 $global:PSDTChildItemCacheFiltered = @{};
 
+<#
+.Synopsis
+    Clears the global cache used by the Find-ChildItem cmdlet.
+    The cmdlet's default alias is: ccic
+
+.DESCRIPTION
+    The cmdlet is removing every item from the Find-ChildItem cmdlet's internal cache.
+    The next execution of Find-ChildItem will rebuild the cache based on the current state of the provider. 
+    
+    This command helps you track constantly changing provider content. It is intended to replace the "restart PowerShell session" action.
+
+    The following global variables are affected:
+        $global:PSDTChildItemCache
+        $global:PSDTChildItemCacheFiltered
+#>
+Function Clear-ChildItemCache {
+    [CmdletBinding()]
+    Param (
+
+    )
+    
+    Write-Verbose "Clearing $($global:PSDTChildItemCache.Count) items from child items cache...";
+    Write-Verbose "Clearing $($global:PSDTChildItemCacheFiltered.Count) items from filtered child items cache...";
+
+    $global:PSDTChildItemCache = @{};
+    $global:PSDTChildItemCacheFiltered = @{};   
+}
+
 Function Find-ChildItem {
   Param (
     [string]$Filter = "*.*",
