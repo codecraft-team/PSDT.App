@@ -192,3 +192,18 @@ Function Get-Directory {
 }
 
 Set-Alias d Get-Directory;
+
+<#
+.SYNOPSIS
+    The cmdlets generates a new guid and writs it to the output and the clipboard.
+    It is intended to shorten guid generation.
+
+    The cmdlet has the newguid default alias.
+#>
+Function New-Guid {
+    $guid = [System.Guid]::NewGuid().ToString();
+    $guid | clip;
+    return $guid;
+}
+
+Set-Alias newguid New-Guid;
