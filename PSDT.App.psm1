@@ -200,10 +200,10 @@ Set-Alias d Get-Directory;
 
     The cmdlet has the newguid default alias.
 #>
-Function New-Guid {
+Function New-PSDTGuid {
     $guid = [System.Guid]::NewGuid().ToString();
     $guid | clip;
     return $guid;
 }
 
-Set-Alias newguid New-Guid;
+Set-Alias newguid New-PSDTGuid;
