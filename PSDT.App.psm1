@@ -5,9 +5,11 @@ if (Test-Path Function:\TabExpansion) {
 }
 
 Function global:TabExpansion($line, $lastWord) {
-    $filter = ($line -split " " | Select-Object -Skip 1) -join ".*";
+    $cmdletStartIndex = ([string]$line).LastIndexOf('|') + 1;
+    $cmdlet = ([string]$line).Substring($cmdletStartIndex).TrimStart();
+    $filter = ($cmdlet -split " " | Select-Object -Skip 1) -join ".*";
    
-  switch -regex ($line) {
+    switch -regex ($cmdlet) {
 		"^(Get-VSSolution|gvss) .*" {
       Get-VSSolution $filter | Select-Object -ExpandProperty FullName
     }
