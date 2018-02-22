@@ -22,7 +22,7 @@ PS :\> Install-Package PSDT.App
   - files,
   - any child item,
     by using multiple path segment filters.
-- Tab completion, for the above mentioned search cmdlets.
+- Tab completion for the above mentioned search cmdlets.
 
 For more information check the cmdlets provided by the module, for example:
 
