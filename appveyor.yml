@@ -68,7 +68,7 @@
     incoming_webhook:
       secure: mYT9gxzFOIwAPjonfFWB104O1Ucb5e3jP4PJ8pfZatbEzUuVnAdBMI9qRnCHpOvw3a6EY1pjac3uC1QAV6d84t55OLxA99lx5qPX+GZvTPo=
     template: >-
-      <{{buildUrl}}|PSDT.App Feature/Hotfix Build {{buildVersion}} {{status}}>
+      <{{buildUrl}}|PSDT.App Feature/Hotfix Build {{buildVersion}} {{status}}> 
 
       Commit <{{commitUrl}}|{{commitId}}> by {{commitAuthor}} on {{commitDate}}
     on_build_success: true
